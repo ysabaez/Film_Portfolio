@@ -2643,3 +2643,59 @@ input, select, textarea {
 				}
 
 	}
+	/* Style for the lightbox overlay */
+/* style.css */
+/* Lightbox styles */
+#lightbox {
+    position: fixed; /* Fixed positioning to keep it on screen */
+    top: 0; /* Align to top of the screen */
+    left: 0; /* Align to left of the screen */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Center contents vertically */
+    z-index: 1000; /* Ensure it is on top of other elements */
+}
+
+/* Image inside lightbox */
+#lightbox-img {
+    max-width: 90%; /* Maximum width of the image */
+    max-height: 90%; /* Maximum height of the image */
+    border-radius: 8px; /* Optional: Add border radius */
+}
+
+/* Button styles */
+#prev, #next {
+    position: absolute; /* Position buttons absolutely */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for the button height */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background */
+    border: none; /* Remove border */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    z-index: 1001; /* Ensure buttons are above the image */
+}
+
+#prev {
+    left: 20px; /* Position to the left */
+}
+
+#next {
+    right: 20px; /* Position to the right */
+}
+
+/* Optional: Additional styles for the gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the gallery items */
+}
+
+
+
+
+  
