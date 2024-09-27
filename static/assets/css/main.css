@@ -1813,25 +1813,27 @@ input, select, textarea {
 
 /* Icons */
 
-	ul.icons {
-		cursor: default;
-		list-style: none;
-		padding-left: 0;
-	}
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
 
-		ul.icons li {
-			display: inline-block;
-			padding-left: 0;
-		}
+ul.icons li {
+    display: inline-block;
+    padding-left: 0;
+}
 
-		ul.icons a {
-			display: inline-block;
-			width: 2em;
-			height: 2em;
-			line-height: 2em;
-			text-align: center;
-			border: 0;
-		}
+ul.icons a {
+    display: inline-block;
+    width: 3em; /* Increase width */
+    height: 3em; /* Increase height */
+    line-height: 3em; /* Ensure the icon is centered vertically */
+    text-align: center;
+    border: 0;
+    font-size: 1.5em; /* Increase font size for icons (if using icon fonts) */
+}
+
 
 /* Form */
 
@@ -2138,7 +2140,7 @@ input, select, textarea {
 			cursor: default;
 			position: relative;
 			display: block;
-			font-size: 0.6em;
+			font-size: 0.8em;
 			color: rgba(255, 255, 255, 0.5);
 			line-height: 1.25em;
 			margin: 1.75em 1.5em 1.5em 1.5em;
@@ -2705,5 +2707,29 @@ input, select, textarea {
 
 
 
+#about {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px; /* Padding for spacing */
+}
 
+
+header h2 {
+    font-size: 2em; /* Increase size for prominence */
+    text-align: center; /* Center header */
+    margin-bottom: 20px; /* Spacing below the header */
+}
+
+p {
+    font-size: 1em; /* Base font size for paragraphs */
+    line-height: 1.6em; /* Increased line height for readability */
+    margin: 10px 0; /* Vertical spacing between paragraphs */
+}
+
+strong {
+    font-weight: bold; /* Bold for emphasis */
+}
+
+#Portafolio_description {
+	margin-bottom: 60px; /* Adjust the value as needed */
+}
   
