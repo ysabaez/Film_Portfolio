@@ -2657,79 +2657,113 @@ ul.icons a {
 /* style.css */
 /* Lightbox styles */
 #lightbox {
-    position: fixed; /* Fixed positioning to keep it on screen */
-    top: 0; /* Align to top of the screen */
-    left: 0; /* Align to left of the screen */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    display: none; /* Initially hidden */
-    justify-content: center; /* Center contents horizontally */
-    align-items: center; /* Center contents vertically */
-    z-index: 1000; /* Ensure it is on top of other elements */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 /* Image inside lightbox */
 #lightbox-img {
-    max-width: 90%; /* Maximum width of the image */
-    max-height: 90%; /* Maximum height of the image */
-    border-radius: 8px; /* Optional: Add border radius */
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* Button styles */
 #prev, #next {
-    position: absolute; /* Position buttons absolutely */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for the button height */
-    background-color: rgba(255, 255, 255, 0.8); /* Light background */
-    border: none; /* Remove border */
-    padding: 10px; /* Padding */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    z-index: 1001; /* Ensure buttons are above the image */
+    background-color: rgba(53, 148, 192, 0.6); /* Increased transparency */
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 18px;
+    z-index: 1001;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.9); /* Added semi-transparent text color */
 }
 
 #prev {
-    left: 20px; /* Position to the left */
+    left: 20px;
 }
 
 #next {
-    right: 20px; /* Position to the right */
+    right: 20px;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Increased transparency on hover */
+    color: rgba(0, 0, 0, 0.8); /* Darker text on hover */
 }
 
 /* Optional: Additional styles for the gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the gallery items */
+    justify-content: center;
 }
 
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    #lightbox-img {
+        max-width: 95%;
+        max-height: 70%;
+    }
 
+    #prev, #next {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: rgba(53, 148, 192, 0.7); /* Slightly more opaque for mobile */
+    }
+
+    #prev {
+        left: 10px;
+    }
+
+    #next {
+        right: 10px;
+    }
+}
 
 #about {
-    background-color: #f9f9f9; /* Light background for contrast */
-    padding: 20px; /* Padding for spacing */
+    background-color: rgba(249, 249, 249, 0.9); /* Slightly transparent background */
+    padding: 20px;
 }
 
-
 header h2 {
-    font-size: 2em; /* Increase size for prominence */
-    text-align: center; /* Center header */
-    margin-bottom: 20px; /* Spacing below the header */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
 }
 
 p {
-    font-size: 1em; /* Base font size for paragraphs */
-    line-height: 1.6em; /* Increased line height for readability */
-    margin: 10px 0; /* Vertical spacing between paragraphs */
+    font-size: 1em;
+    line-height: 1.6em;
+    margin: 10px 0;
+    color: rgba(0, 0, 0, 0.8); /* Slightly transparent text */
 }
 
 strong {
-    font-weight: bold; /* Bold for emphasis */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
 }
 
 #Portafolio_description {
-	margin-bottom: 60px; /* Adjust the value as needed */
+    margin-bottom: 60px;
+    background-color: rgba(255, 255, 255, 0.7); /* Added semi-transparent background */
+    padding: 15px;
+    border-radius: 5px;
 }
-  
