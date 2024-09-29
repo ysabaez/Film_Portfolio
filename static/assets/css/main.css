@@ -1826,12 +1826,12 @@ ul.icons li {
 
 ul.icons a {
     display: inline-block;
-    width: 3em; /* Increase width */
-    height: 3em; /* Increase height */
-    line-height: 3em; /* Ensure the icon is centered vertically */
+    width: 4em; /* Increased width */
+    height: 4em; /* Increased height */
+    line-height: 4em; /* Adjusted line-height to match new height */
     text-align: center;
     border: 0;
-    font-size: 1.5em; /* Increase font size for icons (if using icon fonts) */
+    font-size: 2em; /* Increased font size for larger icons */
 }
 
 
@@ -2761,7 +2761,7 @@ strong {
     color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
 }
 
-#Portafolio_description {
+#Portfolio_description {
     margin-bottom: 60px;
     background-color: rgba(255, 255, 255, 0.7); /* Added semi-transparent background */
     padding: 15px;
