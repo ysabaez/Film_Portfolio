@@ -16,16 +16,14 @@
             background-color: #f9f9f9; /* Optional: add a background color */
         }
 
-        /* Style the iframe to be smaller initially */
+        /* Style the iframe to fill the screen responsively */
         iframe {
-            width: 80%; /* Initial width */
-            height: 80%; /* Initial height */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             border: none; /* Remove default border */
             max-width: 100%; /* Prevent overflow */
             max-height: 100%; /* Prevent overflow */
             display: block; /* Ensure it behaves like a block element */
-            transform: scale(0.8); /* Scale down the content */
-            transform-origin: top left; /* Scale from the top left corner */
         }
 
         /* Optional: Add some styles for better mobile experience */
@@ -35,9 +33,7 @@
             }
 
             iframe {
-                width: 100%; /* Full width on smaller screens */
                 height: auto; /* Allow height to adjust based on content */
-                transform: scale(0.6); /* Further reduce size on mobile */
             }
         }
     </style>
