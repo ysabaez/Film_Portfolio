@@ -12,16 +12,13 @@
             display: flex;
             justify-content: center; /* Center the iframe */
             align-items: center; /* Center the iframe vertically */
-            overflow: hidden; /* Prevent scrollbars from appearing */
         }
 
-        /* Style the iframe to fill the screen responsively */
+        /* Style the iframe to fill the screen */
         iframe {
-            width: 100vw; /* Full width of the viewport */
-            height: 100vh; /* Full height of the viewport */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             border: none; /* Remove default border */
-            max-width: 100%; /* Prevent overflow */
-            max-height: 100%; /* Prevent overflow */
         }
     </style>
 </head>
@@ -30,5 +27,6 @@
         This browser does not support PDFs. Please download the PDF to view it: 
         <a href="resume.pdf">Download PDF</a>
     </iframe>
+
 </body>
 </html>
