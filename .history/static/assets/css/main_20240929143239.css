@@ -2146,21 +2146,6 @@ ul.icons a {
 			margin: 1.75em 1.5em 1.5em 1.5em;
 		}
 
-		#resume {
-			text-align: center; /* Center text inside the #resume div */
-		}
-		
-		#resume p {
-			position: relative;
-			min-height: 35px;
-			cursor: pointer; /* Change to pointer for link */
-			display: inline-block; /* Change to inline-block to make it fit the content */
-			font-size: 0.8em;
-			color: rgba(255, 255, 255, 0.5);
-			line-height: 1.25em;
-			margin: 1.75em 0; /* Center the paragraph without side margins */
-		}
-
 	#nav ul {
 		list-style: none;
 		padding-left: 0;
