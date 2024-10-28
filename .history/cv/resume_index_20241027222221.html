@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
+    <meta name="description" content="Antonio Urdaneta's Resume">
+    <link rel="icon" href="/static/assets/css/images/aulogo.jpg">
+    <title>Antonio Urdaneta Resume</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: fixed; /* Prevents bounce on iOS */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            /* Improve touch scrolling on iOS */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* PDF container */
+        .pdf-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* Enable touch gestures */
+            touch-action: manipulation;
+            /* Enable momentum scrolling on iOS */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Iframe styles */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* Better handling of touch events */
+            touch-action: pan-x pan-y pinch-zoom;
+        }
+
+        /* Fallback content */
+        .fallback-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Better width for mobile */
+            max-width: 400px;
+        }
+
+        .download-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px; /* Larger touch target */
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            /* Improve button touch area */
+            min-width: 200px;
+            font-size: 16px;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Loading indicator */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .pdf-container {
+                /* Allow vertical scrolling on mobile */
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            iframe {
+                /* Better handling of mobile gestures */
+                touch-action: manipulation;
+            }
+
+            .download-button {
+                /* Ensure button is easily tappable */
+                padding: 16px 24px;
+                font-size: 18px;
+            }
+
+            /* Add hint for users */
+            .mobile-hint {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 14px;
+                pointer-events: none;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                z-index: 1000;
+            }
+
+            .mobile-hint.hide {
+                opacity: 0;
+            }
+        }
+
+        /* Handle orientation changes */
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+            .pdf-container {
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <div class="loading">Loading resume...</div>
+        <iframe 
+            src="resume.pdf#view=FitH"
+            title="Antonio Urdaneta Resume"
+            loading="lazy"
+            onload="handleIframeLoad(this)"
+        >
+            <div class="fallback-content">
+                <p>Unable to display the PDF directly in your browser.</p>
+                <p>You can:</p>
+                <a href="resume.pdf" class="download-button" download>
+                    Download Resume (PDF)
+                </a>
+            </div>
+        </iframe>
+    </div>
+
+    <script>
+        function handleIframeLoad(iframe) {
+            // Hide loading indicator
+            iframe.previousElementSibling.style.display = 'none';
+
+            // Add mobile hint if on mobile
+            if (window.innerWidth <= 768) {
+                const hint = document.createElement('div');
+                hint.className = 'mobile-hint';
+                hint.textContent = 'Pinch to zoom • Double tap to fit screen';
+                document.body.appendChild(hint);
+
+                // Hide hint after 5 seconds
+                setTimeout(() => {
+                    hint.classList.add('hide');
+                    setTimeout(() => hint.remove(), 300);
+                }, 5000);
+            }
+        }
+
+        // Check if PDF can be displayed
+        function checkPdfSupport() {
+            const iframe = document.querySelector('iframe');
+            
+            iframe.onerror = function() {
+                iframe.outerHTML = document.querySelector('.fallback-content').outerHTML;
+            };
+        }
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', function() {
+            // Brief timeout to let the orientation change complete
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+
+        // Initialize when the page loads
+        window.addEventListener('load', checkPdfSupport);
+    </script>
+</body>
+</html>
