@@ -130,6 +130,10 @@ input, select, textarea {
 		letter-spacing: -1px;
 	}
 
+	#main > section .container > header h2 {
+		font-weight: bold;
+	}
+
 		h2.alt {
 			color: #888;
 		}
@@ -2626,7 +2630,6 @@ ul.icons a {
 			h2 {
 				font-size: 1.5em;
 				letter-spacing: 0;
-				font-weight: 300;
 			}
 
 			.container {
@@ -2777,7 +2780,7 @@ strong {
     color: rgba(0, 0, 0, 0.9); /* Slightly transparent text */
 }
 
-#Portfolio_description {
+#Portfolio_description, #Thumbnails_description, #Flyers_description, #Photos_description {
     margin-bottom: 60px;
     background-color: rgba(255, 255, 255, 0.7); /* Added semi-transparent background */
     padding: 15px;
