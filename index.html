@@ -158,6 +158,25 @@
 							</div>
 						</section>
 
+						<!-- Video Reel Section -->
+						<section id="reel" class="three">
+							<div class="container">
+
+								<header>
+									<h2>Video Reel</h2>
+								</header>
+
+								<p id="Reel_description">A short editing reel showcasing my work.</p>
+
+								<div class="reel-showcase">
+									<video controls playsinline preload="metadata">
+										<source src="static/videos/reel.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							</div>
+						</section>
+
 						<!-- Thumbnail Portfolio Section -->
 						<section id="thumbnails" class="two">
 							<div class="container">
@@ -346,6 +365,20 @@
 
 							.portfolio-grid .item {
 								width: min(340px, 100%);
+							}
+
+							/* Video Reel Styling */
+							.reel-showcase {
+								display: flex;
+								justify-content: center;
+								margin-top: 20px;
+							}
+
+							.reel-showcase video {
+								width: 100%;
+								max-width: 640px;
+								border-radius: 8px;
+								background: #000;
 							}
 
 							/* Flyer Showcase Styling */
